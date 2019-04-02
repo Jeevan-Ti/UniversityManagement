@@ -1,0 +1,30 @@
+<<<
+Thu Mar 28 00:26:18 2019
+this is a new news entry
+test news sucessfully entered
+<<<
+Thu Mar 28 00:39:00 2019
+
+this is secon news entry
+second news test
+<<<
+Thu Mar 28 00:47:55 2019
+
+this is third news entry
+let me see if this works
+
+<<<
+Thu Mar 28 00:50:13 2019
+
+this is fourth hope this would work
+bla bla bla
+<<<
+Sun Mar 31 23:30:24 2019
+
+great day today
+goodnight
+<<<
+Tue Apr  2 15:41:39 2019
+
+one of student selected for intel
+package 12 LPA
