@@ -19,3 +19,5 @@ float str2float(string s);
 int str2int(string s);
 string CurrentDirectory();
 wstring s2ws(const string& s);
+int DeleteEntry(const string key, const string dir);
+string StudentDirectory();

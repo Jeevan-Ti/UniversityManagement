@@ -397,3 +397,80 @@ wstring s2ws(const string& s)
 {
 	return std::wstring(s.begin(), s.end());
 }
+
+int DeleteEntry(const string key, const string directory)
+{
+	int i;
+	ifstream ifile;
+	ofstream ofile;
+	string line, temp;
+	char ch = ' ';
+	const char* d;
+	d = &directory[0];
+	ifile.open(d, ios::in);
+	ofile.open("temp.txt", ios::out);
+	if (ifile.is_open() && ofile.is_open())
+	{
+		while (1)
+		{
+			//cout<<"Openeinf\n";
+			getline(ifile, line);
+			i = 0;
+			//gives the first key
+			while (ch != ',')
+			{
+				if (ifile.eof())
+					break;
+				ch = line[i];
+				if (ch != ',')
+					temp += ch;
+				else if (ch == ',')
+				{
+					ch = ' ';
+					break;
+				}
+				i++;
+			}
+			if (temp.compare(key))
+				ofile << line << endl;
+			if (ifile.eof())
+				break;
+			temp = "";
+		}
+		ifile.close();
+		ofile.close();
+		ifile.open("temp.txt", ios::in);
+		ofile.open(d, ios::out);
+		if (ifile.is_open() && ofile.is_open())
+		{
+			while (1)
+			{
+				getline(ifile, line);
+				//cout<<"re\n";
+				ofile << line << endl;
+				if (ifile.eof())
+					break;
+			}
+			ofile.close();
+			ifile.close();
+			remove("temp.txt");
+			return 1;
+		}
+		else
+			return 0;
+	}
+	else
+		return 0;
+}
+
+string StudentDirectory()
+{
+	string directory;
+	directory = CurrentDirectory();
+	directory += "\\LoginData";
+	wstring x = s2ws(directory);
+	WCHAR * wx = &x[0];
+	_wmkdir(wx);
+	directory += "\\Student.csv";
+	return directory;
+}

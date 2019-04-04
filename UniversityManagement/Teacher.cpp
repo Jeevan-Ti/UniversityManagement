@@ -207,6 +207,34 @@ int TeacherSubRoutine(char ch,Teacher* t)
 		}
 	}
 	
+	else if (ch == 'E' || ch == 'e')
+	{
+		int i;
+		string directory,regno;
+		system("CLS");
+		cout << "Enter registration number to delete\n";
+		cin >> regno;
+		directory = StudentDirectory();
+		i = DeleteEntry(regno, directory);
+		if (i == 1)
+		{
+			cout << "Sucessfully deleted\n";
+			cout << "Press any key to return to previous page\n";
+			_getch();
+			return 0;
+		}
+		else
+		{
+			system("CLS");
+			cout << "Seems like you don't have any messages yet\n";
+			cout << "Press any key to return to previous page\n";
+			_getch();
+			return 0;
+		}
+		
+		return 0;
+	}
+
 	//invalid input
 	else
 	{

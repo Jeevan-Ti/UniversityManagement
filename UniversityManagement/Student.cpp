@@ -293,6 +293,7 @@ int SearchEntry(char ch)
 				cout << "To send a message to parent press P\n";
 				cout << "To see your messages press Y\n";
 				cout << "To search for a student press D\n";
+				cout << "To delete student entry enter E\n";
 				cout << "To logout press L\n";
 				ch = _getch();
 				if (TeacherSubRoutine(ch,tptr))
