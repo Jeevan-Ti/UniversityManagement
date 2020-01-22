@@ -1,2 +1,2 @@
 # UniversityManagement
-c++ basic console application using files for relatioship management between student,parents,trachers
+c++ basic console application using file system for relationship management between student,parents,teachers
