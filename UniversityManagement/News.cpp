@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "News.h"
+#define _CRT_SECURE_NO_WARNINGS
 
 int EnterNews()
 {
