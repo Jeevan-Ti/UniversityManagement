@@ -4,7 +4,8 @@ project(UniversityManagement)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release"
     CACHE STRING "Configuration types" FORCE)
-
+    
+add_subdirectory(UniversityManagement)
 add_executable(UniversityManagement
   Display.cpp
   Display.h
