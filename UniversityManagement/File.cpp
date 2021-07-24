@@ -2,6 +2,7 @@
 #include "File.h"
 #define WINDOWS
 
+//adding final fix
 #ifdef WINDOWS
 #include <direct.h>
 #define GetCurrentDir _getcwd
