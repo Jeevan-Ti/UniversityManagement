@@ -3,8 +3,8 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-  ubuntu-build:
-    runs-on: ubuntu-latest
+  windows-build:
+    runs-on: windows-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2.0.0
