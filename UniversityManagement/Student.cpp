@@ -276,6 +276,7 @@ int SearchEntry(char ch)
 		char ch = ' ';
 		bool check = false;
 		cout << "Teacher login\n";
+		//cin >> id;
 		cout << "Enter employee id\n";
 		cin >> id;
 		password = EnterPassword("Enter your password\n");
