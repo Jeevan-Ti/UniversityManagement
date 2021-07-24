@@ -1,5 +1,14 @@
 #include "stdafx.h"
 #include "File.h"
+#define WINDOWS
+
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
 
 using namespace std;
 //using namespace std::experimental::filesystem;
@@ -389,10 +398,10 @@ int ReadFile(Student* s)
 
 string CurrentDirectory()
 {
-	std::experimental::filesystem::path cwd =
-		std::experimental::filesystem::v1::current_path();
-
-	return cwd.u8string();
+	char buff[FILENAME_MAX]; //create string buffer to hold path
+	GetCurrentDir(buff, FILENAME_MAX);
+	string current_working_dir(buff);
+	return current_working_dir;
 }
 
 wstring s2ws(const string& s)
