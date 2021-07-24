@@ -389,7 +389,7 @@ int ReadFile(Student* s)
 
 string CurrentDirectory()
 {
-	std::experimental::filesystem::v1::path cwd =
+	std::experimental::filesystem::path cwd =
 		std::experimental::filesystem::v1::current_path();
 
 	return cwd.u8string();
