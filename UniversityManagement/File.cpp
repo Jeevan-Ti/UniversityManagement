@@ -2,7 +2,7 @@
 #include "File.h"
 
 using namespace std;
-using namespace std::experimental::filesystem::v1;
+//using namespace std::experimental::filesystem;
 bool checkr = false;
 File::File()
 {
@@ -389,7 +389,7 @@ int ReadFile(Student* s)
 
 string CurrentDirectory()
 {
-	path cwd = current_path();
+	std::experimental::filesystem::path cwd = std::experimental::filesystem::current_path();
 	return cwd.u8string();
 }
 
