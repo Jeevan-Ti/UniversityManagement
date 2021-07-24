@@ -81,9 +81,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\..\..\Downloads\kisspng-computer-icons-clip-art-sales-ico-5ab10c4447ee93.1005119215215524522947.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="icon1.ico">
       <Filter>Resource Files</Filter>
     </Image>
