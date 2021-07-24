@@ -1,8 +1,18 @@
 #include "stdafx.h"
 #include "File.h"
+#define WINDOWS
+
+//adding final fix
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
 
 using namespace std;
-using namespace std::experimental::filesystem;
+//using namespace std::experimental::filesystem;
 bool checkr = false;
 File::File()
 {
@@ -389,8 +399,10 @@ int ReadFile(Student* s)
 
 string CurrentDirectory()
 {
-	path cwd = current_path();
-	return cwd.u8string();
+	char buff[FILENAME_MAX]; //create string buffer to hold path
+	GetCurrentDir(buff, FILENAME_MAX);
+	string current_working_dir(buff);
+	return current_working_dir;
 }
 
 wstring s2ws(const string& s)
